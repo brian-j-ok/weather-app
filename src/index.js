@@ -11,10 +11,15 @@ let city = null;
 let state = null;
 
 const searchBar = document.getElementById('search');
+searchBar.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    search();
+  }
+});
 const searchBtn = document.getElementById('search-btn');
 searchBtn.addEventListener('click', () => {
   search();
-})
+});
 
 if('geolocation' in navigator) {
   navigator.geolocation.getCurrentPosition((position) => {
