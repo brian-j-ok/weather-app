@@ -1,0 +1,30 @@
+#forecast {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.daily-forecast {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.daily-forecast img {
+  height: 64px;
+  width: 64px;
+}
+
+/* Data Attributes setting background image corresponding with weather */
+[data-weather="Clouds"] {
+  background-image: url("https://img.icons8.com/wired/64/000000/clouds.png");
+}
+
+[data-weather="Rain"] {
+  background-image: url("https://img.icons8.com/wired/64/000000/rain.png");
+}
+
+[data-weather="Snow"] {
+  background-image: url("https://img.icons8.com/wired/64/000000/snow.png");
+}
