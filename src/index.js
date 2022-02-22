@@ -56,14 +56,16 @@ async function search() {
 
   let locationData = null;
 
-  if (input.size > 1) {
+  if (input.length > 1) {
     city = input[0].replace(/\s+/g, '');
     state = input[1].replace(/\s+/g, '');
 
     const response = await fetch ('http://api.openweathermap.org/geo/1.0/direct?q=' + city + ',' + state + ',US&limit=1&appid=e33abff516f8fc21eb34082ce41dc0bb');
     locationData = await response.json();
+
+    console.log(locationData);
   } else {
-    city = input[0];
+    city = input[0].replace(/\s+/g, '');
 
     const response = await fetch ('http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=e33abff516f8fc21eb34082ce41dc0bb');
     locationData = await response.json();
@@ -94,9 +96,13 @@ function generateCurrent(currentWeatherData) {
   let currentWeather = document.createElement('h3');
   currentWeather.innerText = currentWeatherData.weather[0].main;
 
+  let currentTemp = document.createElement('h3');
+  currentTemp.innerText = Math.round((currentWeatherData.temp - 273.15) * 9/5 + 32);
+
   current.appendChild(location);
   current.appendChild(currentWeatherImage);
   current.appendChild(currentWeather);
+  current.appendChild(currentTemp);
 }
 
 // Create 7 Day Forecast with DOM Elements
