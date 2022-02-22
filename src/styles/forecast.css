@@ -1,7 +1,12 @@
 #forecast {
+  margin: 0px 30px;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
 }
 
 .daily-forecast {
@@ -9,8 +14,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  backdrop-filter: blur(8px);
 }
 
 .daily-forecast img {
@@ -29,10 +32,22 @@
   background-image: url("https://img.icons8.com/wired/64/000000/clouds.png");
 }
 
-[data-weather="Rain"] {
+[data-weather="Rain"], [data-weather="Mist"], [data-weather="Drizzle"] {
   background-image: url("https://img.icons8.com/wired/64/000000/rain.png");
 }
 
 [data-weather="Snow"] {
   background-image: url("https://img.icons8.com/wired/64/000000/snow.png");
+}
+
+[data-weather="Clear"] {
+  background-image: url("https://img.icons8.com/wired/64/000000/sun.png");
+}
+
+[data-weather="Fog"] {
+  background-image: url("https://img.icons8.com/wired/64/000000/fog.png");
+}
+
+[data-weather="Haze"] {
+  background-image: url("https://img.icons8.com/wired/64/000000/haze.png");
 }

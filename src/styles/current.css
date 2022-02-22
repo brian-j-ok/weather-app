@@ -1,0 +1,15 @@
+#current {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#current img {
+  height: 64px;
+  width: 64px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
