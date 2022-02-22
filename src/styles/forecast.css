@@ -9,11 +9,19 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  backdrop-filter: blur(8px);
 }
 
 .daily-forecast img {
   height: 64px;
   width: 64px;
+}
+
+.min-max {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 /* Data Attributes setting background image corresponding with weather */
